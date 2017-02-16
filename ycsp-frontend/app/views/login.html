@@ -1,0 +1,64 @@
+<div class="container">
+	<div class="row main">
+		<div class="panel-heading">
+		   <div class="panel-title text-center">
+				<h1 class="title">User Login (YCSP)</h1>
+				<hr />
+			</div>
+		</div> 
+		<div class="main-login main-center">
+			<p>{{login.errorMessage}}</p>
+			<form name="loginForm" ng-submit="loginForm.$valid && login.dologin(login.loginData)" novalidate> 
+				<div class="form-group">
+					<label for="email" class="cols-sm-2 control-label">Your Email</label>
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+							<input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email" ng-model='login.loginData.email' required/>
+							<p ng-show="(loginForm.email.$dirty || loginForm.$submitted) && loginForm.email.$error.required">Please enter your email address.</p>
+							<p ng-show="loginForm.email.$error.email">Please enter valid email address.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="password" class="cols-sm-2 control-label">Password</label>
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+							<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"  ng-model='login.loginData.password' required/>
+							<span ng-show="(loginForm.password.$dirty || loginForm.$submitted) && loginForm.password.$error.required">Please enter your password.</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<label><input type="checkbox" name="remember_me" ng-model='loginData.remember_me'> Remember me</label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group ">
+					<input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Login" />
+				</div>
+				
+				<div class="form-group">
+					<p class="help-block">
+						<a class="pull-right text-muted" ui-sref="forgot"><small>Forgot your password?</small></a>
+					</p>
+				</div>
+				
+				<div class="form-group">
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<a ui-sref="register">Register</a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

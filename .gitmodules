@@ -1,0 +1,3 @@
+[submodule "ycsp-frontend"]
+	path = ycsp-frontend
+	url = https://github.com/tam-developers/ycsp-frontend.git

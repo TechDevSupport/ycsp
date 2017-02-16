@@ -1,0 +1,30 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<h4 class="">
+			  Forgot your password?
+			</h4>
+			<form name='forgotForm' data-ng-submit="forgotForm.$valid && forgot.forgotPassword(forgot.forgotData)" novalidate method="post">
+			  <fieldset>
+				<span class="help-block">
+				  Email address you use to log in to your account
+				  <br>
+				  We'll send you an email with instructions to choose a new password.
+				</span>
+				<div class="form-group input-group">
+				  <span class="input-group-addon">
+					@
+				  </span>
+				  <input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email" ng-model='forgot.forgotData.email' required/>
+				  <p ng-show="(forgotForm.email.$dirty || forgotForm.$submitted) && forgotForm.email.$error.required">Please enter your email address.</p>
+				  <p ng-show="forgotForm.email.$error.email">Please enter valid email address.</p>
+				</div>
+				<input type="submit" class="btn btn-primary btn-block" value='Send Email'>
+				<p class="help-block">
+				  <a class="text-muted" ui-sref='/' id="acceso"><small>Account Access</small></a>
+				</p>
+			  </fieldset>
+			</form>
+		</div>
+	</div>
+</div>

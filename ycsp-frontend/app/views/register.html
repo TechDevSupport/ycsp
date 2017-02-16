@@ -1,0 +1,96 @@
+<div class="container">
+	<div class="row main">
+		<div class="panel-heading">
+		   <div class="panel-title text-center">
+				<h1 class="title">(Registration) YCSP</h1>
+				<hr />
+			</div>
+		</div> 
+		<div class="main-login main-center">
+			<p>{{register.registerMessage}}</p>
+			<form accessible-form name='registerForm' data-ng-submit="registerForm.$valid && register.registerUser(userData)" novalidate enctype="multipart/form-data" method="post">
+				
+				<div class="form-group">
+					<label for="name" class="cols-sm-2 control-label">Full name</label>
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+							<input type="text" class="form-control" name="name" id="name"  placeholder="Full name" ng-model='register.userData.name' required/>
+							<p ng-show="(registerForm.name.$dirty || registerForm.$submitted) && registerForm.name.$error.required">Please enter your full name.</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="name" class="cols-sm-2 control-label">Date of birth</label>
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+							<input type="date" class="form-control" name="dob" id="dob"  placeholder="Date of birth" ng-model='register.userData.dob' required/>
+							<p ng-show="(registerForm.dob.$dirty || registerForm.$submitted) && registerForm.dob.$error.required">Please select your date of birth.</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label for="name" class="cols-sm-2 control-label">Gender</label>
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+							<select name="gender" ng-model="register.userData.gender" class="form-control" required>
+								<option value=''>Select</option>
+								<option value='male'>Male</option>
+								<option value='female'>Female</option>
+							</select>
+							<p ng-show="(registerForm.gender.$dirty || registerForm.$submitted) && registerForm.gender.$error.required">Please select your gender.</p>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="form-group">
+					<label for="email" class="cols-sm-2 control-label">Your Email</label>
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+							<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email" ng-model="register.userData.email" required/>
+							<p ng-show="(registerForm.email.$dirty || registerForm.$submitted) && registerForm.email.$error.required">Please enter your email address.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="password" class="cols-sm-2 control-label">Password</label>
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+							<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password" ng-model="register.userData.password" required/>
+							<p ng-show="(registerForm.password.$dirty || registerForm.$submitted) && registerForm.password.$error.required">Please enter your password.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+					<div class="cols-sm-10">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+							<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password" ng-model="register.userData.confirm" password-match="userData.password" required/>
+							<p ng-show="(registerForm.confirm.$dirty || registerForm.$submitted) && registerForm.confirm.$error.required">Please confirm your password.</p>
+							<p ng-show="registerForm.confirm.$error.noMatch" class="error">Passwords do not match.</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group ">
+					<input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Register"/>
+				</div>
+				
+				<div class="login-register">
+					<a ui-sref="/">Login</a>
+				 </div>
+			</form>
+		</div>
+	</div>
+</div>
+
